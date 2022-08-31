@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+
+  - name: demo # name of the source 
+    schema: dbt_joshuasmartolufemi # this is the schema our raw data lives in
+    database: postgres # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: demo_data
+        description: >
+          Contains demo information for lightdash dashboard
