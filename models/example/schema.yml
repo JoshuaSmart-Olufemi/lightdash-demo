@@ -2,10 +2,10 @@
 version: 2
 
 models:
-    - name: my_first_dbt_model
+    - name: my_first_dbt_model 
       description: "A starter dbt model"
       columns:
-          - name: id
+          - name: id   
             description: "The primary key for this table"
             tests:
                 - unique
@@ -19,23 +19,55 @@ models:
             tests:
                 - unique
                 - not_null
+
+                
     - name: new_demo_data
       description: "A model based on demo sales data for a lightdash dashboard"
       columns:
           - name: OrderDate
             description: "The date orders were made by customers"
+            meta:
+              metrics:
+                maximum_order_date:
+                  type: max
+                minimum_order_date:
+                  type: min
 
           - name: DueDate
             description: "The date orders made are supposed to be due/arrive at the customer's doorstep"
+            meta:
+              metrics:
+                maximum_due_date:
+                  type: max
+                minimum_due_date:
+                  type: min
 
           - name: Sales_Channel
             description: "The sales channels through which the orders were made"
+            meta:
+              metrics:
+                count_of_sales_channel: # name of your metric
+                  type: count # metric type
 
           - name: OrderQty
             description: "The quantity of goods per order"
+            meta:
+              metrics:
+                sum_of_order_quantity: # name of your metric
+                  type: sum # metric type
+                maximum_due_date:
+                  type: max
+                minimum_due_date:
+                  type: min
 
           - name: Revenue
             description: "The amount of revenue derived from each transaction/order"
+            meta:
+              metrics:
+                sum_of_revenue: # name of your metric
+                  type: sum # metric type
+                average_of_revenue: # name of your metric
+                  type: average # metric type
 
           - name: Product_Name
             description: "The name of the product involved/ordered in the order"
@@ -48,6 +80,14 @@ models:
 
           - name: Region
             description: "The region of the world from which that order is placed where the company does have a presence, online or reseller"
+
+          - name: Profit
+            meta:
+              metrics:
+                sum_of_profit: # name of your metric
+                  type: sum # metric type
+                average_of_profit: # name of your metric
+                  type: average # metric type
 
 
 

@@ -1,6 +1,10 @@
 with new_demo as (
 
-    select * from {{ ref('demo_data') }}
+    select 
+    *  
+    , ("OrderQty" * "ListPrice") as "Profit"
+
+     from {{ ref('demo_data') }} as demo 
 )
 
 select * from new_demo 
