@@ -19,3 +19,44 @@ models:
             tests:
                 - unique
                 - not_null
+    - name: new_demo_data
+      description: "A model based on demo sales data for a lightdash dashboard"
+      columns:
+          - name: OrderDate
+            description: "The date orders were made by customers"
+
+          - name: DueDate
+            description: "The date orders made are supposed to be due/arrive at the customer's doorstep"
+
+          - name: Sales_Channel
+            description: "The sales channels through which the orders were made"
+
+          - name: OrderQty
+            description: "The quantity of goods per order"
+
+          - name: Revenue
+            description: "The amount of revenue derived from each transaction/order"
+
+          - name: Product_Name
+            description: "The name of the product involved/ordered in the order"
+
+          - name: StandardCost
+            description: "The standard cost the order cost the company to manufacture or bring to shelf"
+
+          - name: ListPrice
+            description: "The list price of the order"
+
+          - name: Region
+            description: "The region of the world from which that order is placed where the company does have a presence, online or reseller"
+
+
+
+
+
+
+
+
+
+
+
+
