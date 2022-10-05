@@ -28,7 +28,7 @@ models:
             description: "The date orders were made by customers"
             meta:
               dimensions:
-                type: string
+                type: date
                 sql: '"data"."order_date"'
               metrics:
                 maximum_order_date:
@@ -40,7 +40,7 @@ models:
             description: "The date orders made are supposed to be due/arrive at the customer's doorstep"
             meta:
               dimensions:
-                type: string
+                type: date
                 sql: '"data"."due_date"'
               metrics:
                 maximum_due_date:
@@ -52,7 +52,7 @@ models:
             description: "The standard cost the order cost the company to manufacture or bring to shelf"
             meta:
               dimensions:
-                type: string
+                type: integer
                 sql: '"data"."order_status"'
 
           - name: sales_channel
@@ -69,7 +69,7 @@ models:
             description: "The list price of the order"
             meta:
               dimensions:
-                type: string
+                type: integer
                 sql: '"data"."customer_id"'
               metrics:
                 count_of_customer_id: # name of your metric
@@ -79,7 +79,7 @@ models:
             description: "The quantity of goods per order"
             meta:
               dimensions:
-                type: string
+                type: integer
                 sql: '"data"."order_quantity"'
               metrics:
                 sum_of_order_quantity: # name of your metric
@@ -94,7 +94,7 @@ models:
             description: "The amount of revenue derived from each transaction/order"
             meta:
               dimensions:
-                type: string
+                type: integer
                 sql: '"data"."revenue"'
               metrics:
                 sum_of_revenue: # name of your metric
@@ -120,7 +120,7 @@ models:
           - name: profit
             meta:
               dimensions: 
-                type: string 
+                type: integer
                 sql: '"data"."profit"' 
               metrics:
                 sum_of_profit: # name of your metric
