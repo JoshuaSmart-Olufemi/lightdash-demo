@@ -21,37 +21,66 @@ models:
                 - not_null
 
                 
-    - name: new_demo_data
+    - name: data
       description: "A model based on demo sales data for a lightdash dashboard"
       columns:
-          - name: OrderDate
+          - name: order_date
             description: "The date orders were made by customers"
             meta:
+              dimensions:
+                type: string
+                sql: ' "data"."order_date" '
               metrics:
                 maximum_order_date:
                   type: max
                 minimum_order_date:
                   type: min
 
-          - name: DueDate
+          - name: due_date
             description: "The date orders made are supposed to be due/arrive at the customer's doorstep"
             meta:
+              dimensions:
+                type: string
+                sql: ' "data"."due_date" '
               metrics:
                 maximum_due_date:
                   type: max
                 minimum_due_date:
                   type: min
 
-          - name: Sales_Channel
+          - name: order_status
+            description: "The standard cost the order cost the company to manufacture or bring to shelf"
+            meta:
+              dimensions:
+                type: string
+                sql: ' "data"."order_status" '
+
+          - name: sales_channel
             description: "The sales channels through which the orders were made"
             meta:
+              dimensions:
+                type: string
+                sql: ' "data"."sales_channel" '
               metrics:
                 count_of_sales_channel: # name of your metric
                   type: count # metric type
 
-          - name: OrderQty
+          - name: customer_id
+            description: "The list price of the order"
+            meta:
+              dimensions:
+                type: string
+                sql: ' "data"."customer_id" '
+              metrics:
+                count_of_customer_id: # name of your metric
+                  type: count # metric type
+
+          - name: order_quantity
             description: "The quantity of goods per order"
             meta:
+              dimensions:
+                type: string
+                sql: ' "data"."order_quantity" '
               metrics:
                 sum_of_order_quantity: # name of your metric
                   type: sum # metric type
@@ -59,35 +88,46 @@ models:
                   type: max
                 minimum_due_date:
                   type: min
+                  
 
-          - name: Revenue
+          - name: revenue
             description: "The amount of revenue derived from each transaction/order"
             meta:
+              dimensions:
+                type: string
+                sql: ' "data"."revenue" '
               metrics:
                 sum_of_revenue: # name of your metric
                   type: sum # metric type
                 average_of_revenue: # name of your metric
                   type: average # metric type
+                  
 
-          - name: Product_Name
+          - name: product_category
             description: "The name of the product involved/ordered in the order"
-
-          - name: StandardCost
-            description: "The standard cost the order cost the company to manufacture or bring to shelf"
-
-          - name: ListPrice
-            description: "The list price of the order"
-
-          - name: Region
-            description: "The region of the world from which that order is placed where the company does have a presence, online or reseller"
-
-          - name: Profit
             meta:
+              dimensions:
+                type: string
+                sql: ' "data"."product_category" '
+
+          - name: region
+            description: "The region of the world from which that order is placed where the company does have a presence, online or reseller"
+            meta:
+              dimensions:
+                type: string
+                sql: ' "data"."region" '
+                
+          - name: profit
+            meta:
+              dimensions: 
+                type: string 
+                sql: ' "data"."profit" ' 
               metrics:
                 sum_of_profit: # name of your metric
                   type: sum # metric type
                 average_of_profit: # name of your metric
-                  type: average # metric type
+                  type: average # metric type 
+                  
 
 
 
