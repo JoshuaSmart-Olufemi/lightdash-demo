@@ -125,8 +125,10 @@ models:
               metrics:
                 sum_of_profit: # name of your metric
                   type: sum # metric type
+                  sql: '"data"."sum_of_profit"'
                 average_of_profit: # name of your metric
                   type: average # metric type 
+                  sql: '"data"."average_of_profit"'
                   
 
 
