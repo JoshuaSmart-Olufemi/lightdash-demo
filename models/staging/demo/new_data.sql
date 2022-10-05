@@ -14,4 +14,3 @@ with cte as (
 )
 
 select * from cte 
-limit 10
