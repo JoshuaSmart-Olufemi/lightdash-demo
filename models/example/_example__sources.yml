@@ -29,7 +29,7 @@ models:
             meta:
               dimensions:
                 type: string
-                sql: ' "data"."order_date" '
+                sql: '"data"."order_date"'
               metrics:
                 maximum_order_date:
                   type: max
@@ -41,7 +41,7 @@ models:
             meta:
               dimensions:
                 type: string
-                sql: ' "data"."due_date" '
+                sql: '"data"."due_date"'
               metrics:
                 maximum_due_date:
                   type: max
@@ -53,14 +53,14 @@ models:
             meta:
               dimensions:
                 type: string
-                sql: ' "data"."order_status" '
+                sql: '"data"."order_status"'
 
           - name: sales_channel
             description: "The sales channels through which the orders were made"
             meta:
               dimensions:
                 type: string
-                sql: ' "data"."sales_channel" '
+                sql: '"data"."sales_channel"'
               metrics:
                 count_of_sales_channel: # name of your metric
                   type: count # metric type
@@ -70,7 +70,7 @@ models:
             meta:
               dimensions:
                 type: string
-                sql: ' "data"."customer_id" '
+                sql: '"data"."customer_id"'
               metrics:
                 count_of_customer_id: # name of your metric
                   type: count # metric type
@@ -80,7 +80,7 @@ models:
             meta:
               dimensions:
                 type: string
-                sql: ' "data"."order_quantity" '
+                sql: '"data"."order_quantity"'
               metrics:
                 sum_of_order_quantity: # name of your metric
                   type: sum # metric type
@@ -95,7 +95,7 @@ models:
             meta:
               dimensions:
                 type: string
-                sql: ' "data"."revenue" '
+                sql: '"data"."revenue"'
               metrics:
                 sum_of_revenue: # name of your metric
                   type: sum # metric type
@@ -108,20 +108,20 @@ models:
             meta:
               dimensions:
                 type: string
-                sql: ' "data"."product_category" '
+                sql: '"data"."product_category"'
 
           - name: region
             description: "The region of the world from which that order is placed where the company does have a presence, online or reseller"
             meta:
               dimensions:
                 type: string
-                sql: ' "data"."region" '
+                sql: '"data"."region"'
                 
           - name: profit
             meta:
               dimensions: 
                 type: string 
-                sql: ' "data"."profit" ' 
+                sql: '"data"."profit"' 
               metrics:
                 sum_of_profit: # name of your metric
                   type: sum # metric type
