@@ -69,7 +69,7 @@ models:
             description: "The list price of the order"
             meta:
               dimensions:
-                type: integer
+                type: number
                 sql: '"data"."customer_id"'
               metrics:
                 count_of_customer_id: # name of your metric
