@@ -4,7 +4,7 @@ with new_data as (
     *  
     , ("order_quantity" *5) *  ("revenue") as "profit"
 
-     from {{ ref('data') }} as demo 
+     from {{ ref('new_data') }} as demo 
 )
 
 select * from new_data
