@@ -16,6 +16,6 @@ sources:
       error_after: {count: 48, period: hour}
 
     tables:
-      - name: demo_data
+      - name: data
         description: >
           Contains demo information for lightdash dashboard
