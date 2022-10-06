@@ -84,6 +84,8 @@ models:
               metrics:
                 sum_of_order_quantity: # name of your metric
                   type: sum # metric type
+                average_of_order_quantity:
+                  type: average 
                 maximum_due_date:
                   type: max
                 minimum_due_date:
