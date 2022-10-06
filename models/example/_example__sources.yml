@@ -52,7 +52,7 @@ models:
             description: "The standard cost the order cost the company to manufacture or bring to shelf"
             meta:
               dimension:
-                type: integer
+                type: number
                 sql: '"data"."order_status"'
 
           - name: sales_channel
