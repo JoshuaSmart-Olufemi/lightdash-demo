@@ -79,7 +79,7 @@ models:
             description: "The quantity of goods per order"
             meta:
               dimension:
-                type: integer
+                type: number
                 sql: '"data"."order_quantity"'
               metrics:
                 sum_of_order_quantity: # name of your metric
@@ -94,7 +94,7 @@ models:
             description: "The amount of revenue derived from each transaction/order"
             meta:
               dimension:
-                type: integer
+                type: number
                 sql: '"data"."revenue"'
               metrics:
                 sum_of_revenue: # name of your metric
@@ -120,7 +120,7 @@ models:
           - name: profit
             meta:
               dimension: 
-                type: integer
+                type: number
                 sql: '"data"."profit"' 
               metrics:
                 sum_of_profit: # name of your metric
