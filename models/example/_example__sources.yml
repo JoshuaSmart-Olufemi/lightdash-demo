@@ -27,7 +27,7 @@ models:
           - name: order_date
             description: "The date orders were made by customers"
             meta:
-              dimensions:
+              dimension:
                 type: date
                 sql: '"data"."order_date"'
               metrics:
@@ -39,7 +39,7 @@ models:
           - name: due_date
             description: "The date orders made are supposed to be due/arrive at the customer's doorstep"
             meta:
-              dimensions:
+              dimension:
                 type: date
                 sql: '"data"."due_date"'
               metrics:
@@ -51,14 +51,14 @@ models:
           - name: order_status
             description: "The standard cost the order cost the company to manufacture or bring to shelf"
             meta:
-              dimensions:
+              dimension:
                 type: integer
                 sql: '"data"."order_status"'
 
           - name: sales_channel
             description: "The sales channels through which the orders were made"
             meta:
-              dimensions:
+              dimension:
                 type: string
                 sql: '"data"."sales_channel"'
               metrics:
@@ -68,7 +68,7 @@ models:
           - name: customer_id
             description: "The list price of the order"
             meta:
-              dimensions:
+              dimension:
                 type: number
                 sql: '"data"."customer_id"'
               metrics:
@@ -78,7 +78,7 @@ models:
           - name: order_quantity
             description: "The quantity of goods per order"
             meta:
-              dimensions:
+              dimension:
                 type: integer
                 sql: '"data"."order_quantity"'
               metrics:
@@ -93,7 +93,7 @@ models:
           - name: revenue
             description: "The amount of revenue derived from each transaction/order"
             meta:
-              dimensions:
+              dimension:
                 type: integer
                 sql: '"data"."revenue"'
               metrics:
@@ -106,29 +106,27 @@ models:
           - name: product_category
             description: "The name of the product involved/ordered in the order"
             meta:
-              dimensions:
+              dimension:
                 type: string
                 sql: '"data"."product_category"'
 
           - name: region
             description: "The region of the world from which that order is placed where the company does have a presence, online or reseller"
             meta:
-              dimensions:
+              dimension:
                 type: string
                 sql: '"data"."region"'
                 
           - name: profit
             meta:
-              dimensions: 
+              dimension: 
                 type: integer
                 sql: '"data"."profit"' 
               metrics:
                 sum_of_profit: # name of your metric
                   type: sum # metric type
-                  sql: '"data"."sum_of_profit"'
                 average_of_profit: # name of your metric
                   type: average # metric type 
-                  sql: '"data"."average_of_profit"'
                   
 
 
