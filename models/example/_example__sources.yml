@@ -109,7 +109,7 @@ models:
                   type: average # metric type
                 is_revenue_below_2000:
                   type: boolean
-                  sql: "IF(${revenue} > 2000, TRUE, FALSE)"
+                  sql: "IF(${sum_of_revenue} > 2000, TRUE, FALSE)"
                   
 
           - name: product_category
