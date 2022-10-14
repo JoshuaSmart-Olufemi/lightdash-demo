@@ -37,7 +37,7 @@ models:
                   type: min
                 most_recent_date_updated:
                   type: date
-                  sql: "MAX(${data.order_date})" 
+                  sql: "MAX(${"data"."order_date"})" 
 
           - name: due_date
             description: "The date orders made are supposed to be due/arrive at the customer's doorstep"
