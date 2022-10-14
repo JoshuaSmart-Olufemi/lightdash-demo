@@ -1,0 +1,5 @@
+ {% macro twelve_day( {{column_name}} ) -%} 
+  
+  ( {{ column_name }}::date + interval '12 day' )
+  
+{% endmacro %}

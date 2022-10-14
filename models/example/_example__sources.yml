@@ -35,6 +35,9 @@ models:
                   type: max
                 minimum_order_date:
                   type: min
+                most_recent_date_updated:
+                  type: date
+                  sql: "MAX(${order_date})"
 
           - name: due_date
             description: "The date orders made are supposed to be due/arrive at the customer's doorstep"
@@ -47,6 +50,7 @@ models:
                   type: max
                 minimum_due_date:
                   type: min
+                
 
           - name: order_status
             description: "The standard cost the order cost the company to manufacture or bring to shelf"
@@ -103,6 +107,9 @@ models:
                   type: sum # metric type
                 average_of_revenue: # name of your metric
                   type: average # metric type
+                is_revenue_below_2000:
+                  type: boolean
+                  sql: "IF(${revenue} > 2000, TRUE, FALSE)"
                   
 
           - name: product_category
