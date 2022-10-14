@@ -33,7 +33,6 @@ models:
               metrics:
                 maximum_order_date:
                   type: date
-                  sql: "MAX(${order_date})"
                 minimum_order_date:
                   type: date
                
