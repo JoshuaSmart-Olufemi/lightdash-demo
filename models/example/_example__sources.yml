@@ -32,12 +32,11 @@ models:
                 sql: '"data"."order_date"'
               metrics:
                 maximum_order_date:
-                  type: max
-                minimum_order_date:
-                  type: min
-                most_recent_date_updated:
                   type: date
-                  
+                  sql: "MAX(${order_date})"
+                minimum_order_date:
+                  type: date
+               
 
           - name: due_date
             description: "The date orders made are supposed to be due/arrive at the customer's doorstep"
