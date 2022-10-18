@@ -145,9 +145,6 @@ models:
             dimension:
               type: string
               sql: '"events"."country"'
-            metrics:
-              country_count:
-                type: count_distinct
 
         - name: event_timestamp
           description: "timestamp field of event data"
@@ -162,9 +159,6 @@ models:
             dimension:
               type: string
               sql: '"data"."order_date"'
-            metrics:
-              count_distinct_users:
-                type: count_distinct
 
         - name: user_type
           description: 
@@ -172,9 +166,6 @@ models:
             dimension:
               type: string
               sql: '"events"."user_type"'
-            metrics:
-              count_user_type:
-                type: count_distinct
 
         - name: device_type
           description:
@@ -182,9 +173,6 @@ models:
             dimension:
               type: string
               sql: '"events"."device_type"'
-            metrics:
-              count_device_type:
-                type: count_distinct
 
                   
 

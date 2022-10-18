@@ -11,7 +11,7 @@ with new_data as (
     , revenue
     , product_category
     , region 
-    , (order_quantity *5) *  (revenue) as profit
+    , revenue * 5 as profit
 
      from {{ ref('new_data') }} as demo 
 )
