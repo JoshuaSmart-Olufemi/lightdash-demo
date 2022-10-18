@@ -134,6 +134,58 @@ models:
                   type: sum # metric type
                 average_of_profit: # name of your metric
                   type: average # metric type 
+
+
+    - name: events
+      description: "A model based on demo events data for a lightdash dashboard"
+      columns:
+        - name: country
+          description: "the countries in question where events took place"
+          meta:
+            dimension:
+              type: string
+              sql: '"events"."country"'
+            metrics:
+              country_count:
+                type: count_distinct
+
+        - name: event_timestamp
+          description: "timestamp field of event data"
+          meta:
+            dimension:
+              type: date
+              sql: '"events"."event_timestamp"'
+
+        - name: user_id
+          description: "the users who initiated the events"
+          meta:
+            dimension:
+              type: string
+              sql: '"data"."order_date"'
+            metrics:
+              count_distinct_users:
+                type: count_distinct
+
+        - name: user_type
+          description: 
+          meta:
+            dimension:
+              type: string
+              sql: '"events"."user_type"'
+            metrics:
+              count_user_type:
+                type: count_distinct
+
+        - name: device_type
+          description:
+          meta:
+            dimension:
+              type: string
+              sql: '"events"."device_type"'
+            metrics:
+              count_device_type:
+                type: count_distinct
+
                   
 
 
