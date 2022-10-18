@@ -19,3 +19,7 @@ sources:
       - name: data
         description: >
           Contains demo information for lightdash dashboard
+
+      - name: events
+        description: > 
+          Contains data about demo events data for lightdash dashboard
