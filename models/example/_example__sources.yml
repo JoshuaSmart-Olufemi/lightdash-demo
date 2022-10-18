@@ -135,7 +135,6 @@ models:
                 average_of_profit: # name of your metric
                   type: average # metric type 
 
-
     - name: events
       description: "A model based on demo events data for a lightdash dashboard"
       columns:
