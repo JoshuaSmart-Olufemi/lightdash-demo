@@ -19,8 +19,42 @@ models:
             tests:
                 - unique
                 - not_null
-
-                
+    - name: events
+      columns:
+          - name: country    
+            meta: 
+              dimension:
+                type: string
+                sql: '"events"."country"'  
+              metrics:
+                count_country:
+                  type: integer
+          - name: event_timestamp
+            meta:
+              dimension:
+                type: date
+                sql: '"events"."event_timestamp'    
+          - name: userss
+            meta:
+              dimension:
+                type: string
+                sql: '"events"."userss"'
+          - name: user_type
+            meta:
+              dimension:
+                type: string
+                sql: '"events"."user_type"'
+              metrics:
+                count_user_type:
+                  type: integer
+          - name: device_type
+            meta:
+              dimension: 
+                type: string
+                sql: '"events"."device_type"'
+              metrics:
+                count_device_type:
+                  type: integer
     - name: data
       description: "A model based on demo sales data for a lightdash dashboard"
       columns:
@@ -135,44 +169,7 @@ models:
                 average_of_profit: # name of your metric
                   type: average # metric type 
 
-
-    - name: events
-      description: "A model based on demo events data for a lightdash dashboard"
-      columns:
-        - name: country
-          description: "the countries in question where events took place"
-          meta:
-            dimension:
-              type: string
-              sql: '"events"."country"'
-
-        - name: event_timestamp
-          description: "timestamp field of event data"
-          meta:
-            dimension:
-              type: date
-              sql: '"events"."event_timestamp"'
-
-        - name: user_id
-          description: "the users who initiated the events"
-          meta:
-            dimension:
-              type: string
-              sql: '"data"."order_date"'
-
-        - name: user_type
-          description: 
-          meta:
-            dimension:
-              type: string
-              sql: '"events"."user_type"'
-
-        - name: device_type
-          description:
-          meta:
-            dimension:
-              type: string
-              sql: '"events"."device_type"'
+    
 
                   
 

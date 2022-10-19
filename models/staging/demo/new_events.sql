@@ -6,7 +6,7 @@ with cte as (
     , userss:: text 
     , user_type :: text
     , device_type :: text 
-     from {{ source('demo', 'events') }} 
+    from {{ source('demo', 'events') }} as events 
 )
 
 select * from cte 
