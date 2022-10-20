@@ -28,7 +28,7 @@ models:
                 sql: '"events"."country"'  
               metrics:
                 count_country:
-                  type: integer
+                  type: count
           - name: event_timestamp
             meta:
               dimension:
@@ -46,7 +46,7 @@ models:
                 sql: '"events"."user_type"'
               metrics:
                 count_user_type:
-                  type: integer
+                  type: count
           - name: device_type
             meta:
               dimension: 
@@ -54,7 +54,7 @@ models:
                 sql: '"events"."device_type"'
               metrics:
                 count_device_type:
-                  type: integer
+                  type: count
     - name: data
       description: "A model based on demo sales data for a lightdash dashboard"
       columns:
