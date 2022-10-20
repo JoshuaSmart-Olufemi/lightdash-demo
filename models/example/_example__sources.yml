@@ -39,6 +39,9 @@ models:
               dimension:
                 type: string
                 sql: '"events"."userss"'
+              metrics: 
+                count_users:
+                  type: count
           - name: user_type
             meta:
               dimension:
