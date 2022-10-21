@@ -33,7 +33,7 @@ models:
             meta:
               dimension:
                 type: date
-                sql: '"events"."event_timestamp'    
+                sql: '"events"."event_timestamp"'    
           - name: userss
             meta:
               dimension:
