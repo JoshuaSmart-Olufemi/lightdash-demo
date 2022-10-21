@@ -2,7 +2,7 @@ with new_events as (
 
     select 
     country
-    , event_timestamp
+    , event_timestamp:: date 
     , userss 
     , user_type
     , device_type
