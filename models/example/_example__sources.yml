@@ -137,9 +137,11 @@ models:
               dimension:
                 type: number
                 sql: '"data"."revenue"'
+                compact: default
               metrics:
                 sum_of_revenue: # name of your metric
                   type: sum # metric type
+                  compact: k
                 average_of_revenue: # name of your metric
                   type: average # metric type
                 is_revenue_above_2000:
