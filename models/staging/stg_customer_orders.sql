@@ -9,5 +9,6 @@ with base_cte as (
 )
 
 select *
+--, date_diff(current_date(), order_date,year) as years_since_cohort
 from base_cte
 order by 1

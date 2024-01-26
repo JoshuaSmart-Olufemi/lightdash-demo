@@ -23,6 +23,14 @@ models:
           dimension:
             type: date
             time_intervals: ['DAY', 'WEEK', 'MONTH', 'QUARTER']
+
+          additional_dimensions:
+            years_since_cohort:
+              type: number
+              sql: " date_diff(current_date(), ${order_date}, year) "
+          
+          
+
       - name: revenue
         meta:
           metrics:
