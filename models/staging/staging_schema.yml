@@ -9,14 +9,13 @@ models:
           metrics:
             count_of_customers: 
               label: 'total number of customers'
-              type: count_distinct 
+              type: count
       - name: order_id
         meta:
           metrics:
             count_of_orders:
               label: 'total number of orders'
-              type: count_distinct
-              sql: "count(${order_id})"
+              type: count
       - name: order_date
         meta:
           dimension:
