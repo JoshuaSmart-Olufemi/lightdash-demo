@@ -10,7 +10,6 @@ models:
             count_of_customers: 
               label: 'total number of customers'
               type: count_distinct 
-              sql: " count(${customer_id})"
       - name: order_id
         meta:
           metrics:
