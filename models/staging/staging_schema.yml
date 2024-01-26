@@ -28,6 +28,14 @@ models:
             years_since_cohort:
               type: number
               sql: " date_diff(current_date(), ${order_date}, year) "
+            
+            months_since_cohort:
+              type: number
+              sql: " date_diff(current_date(), ${order_date}, month) "
+
+            quarters_since_cohort:
+              type: number
+              sql: " date_diff(current_date(), ${order_date}, quarter) "
           
           
 
