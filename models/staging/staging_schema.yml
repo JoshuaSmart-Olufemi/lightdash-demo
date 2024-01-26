@@ -37,4 +37,3 @@ models:
             sum_revenue:
               label: 'sum of revenue'
               type: sum
-              sql: "sum(${revenue})"
