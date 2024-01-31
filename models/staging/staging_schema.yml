@@ -47,3 +47,13 @@ models:
               label: 'average order value'
               type: number
               sql: " ${sum_revenue} / ${count_of_orders} "
+
+  - name: stg_time_bw_transactions 
+    description: a raw table representing the orders of customers over time
+    columns: 
+      - name: days_between_transactions
+        meta:
+          metrics:
+            average_days_between_transactions:
+              type: average
+    

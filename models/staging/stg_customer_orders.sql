@@ -8,7 +8,15 @@ with base_cte as (
     from {{ source('dataset_one', 'customers') }}
 )
 
+, date_before as (
+    select *
+    , cast(lag(order_date) over (order by  order_date) as date) as date_before
+
+    from base_cte
+
+)
+
+
 select *
---, date_diff(current_date(), order_date,year) as years_since_cohort
-from base_cte
-order by 1
+from date_before
+order by 3
