@@ -43,3 +43,7 @@ models:
             sum_revenue:
               label: 'sum of revenue'
               type: sum
+            average_order_value:
+              label: 'average order value'
+              type: number
+              sql: " ${sum_revenue} / ${count_of_orders} "
