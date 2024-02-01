@@ -56,6 +56,14 @@ models:
   - name: stg_time_bw_transactions 
     description: a raw table representing the orders of customers over time
     columns: 
+      - name: customer_id
+        
+      - name: order_id
+        
+      - name: order_date
+        
+      - name: revenue
+      
       - name: days_between_transactions
         meta:
           metrics:
