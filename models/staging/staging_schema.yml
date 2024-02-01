@@ -2,6 +2,11 @@ version: 2
 
 models: 
   - name: stg_customer_orders
+    meta:
+      joins:
+        - join: stg_time_bw_transactions
+          sql_on: ${stg_time_bw_transactions.customer_id} = ${stg_customer_orders.customer_id}
+          
     description: a raw table representing the orders of customers over time
     columns: 
       - name: customer_id
