@@ -19,4 +19,4 @@ with base_cte as (
 
 select *
 from date_before
-order by 3
+order by 1
