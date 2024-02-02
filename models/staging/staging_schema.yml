@@ -10,6 +10,7 @@ models:
     description: a raw table representing the orders of customers over time
     columns: 
       - name: no_orders_from_first_order_ever_made
+        description: 'number of orders customers made from first ever order'
       - name: customer_id
         meta:
           metrics:
