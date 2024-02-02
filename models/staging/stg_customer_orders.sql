@@ -17,6 +17,8 @@ with base_cte as (
 )
 
 
-select *
+select 
+min(order_id) over (partition by customer_id order by customer_id) as no_orders_from_first_order_ever_made
+, *
 from date_before
 order by 1
