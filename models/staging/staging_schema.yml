@@ -9,6 +9,7 @@ models:
           
     description: a raw table representing the orders of customers over time
     columns: 
+      - name: no_orders_from_first_order_ever_made
       - name: customer_id
         meta:
           metrics:
@@ -21,6 +22,8 @@ models:
             count_of_orders:
               label: 'total number of orders'
               type: count
+
+            
       - name: order_date
         meta:
           dimension:
@@ -39,9 +42,7 @@ models:
             quarters_since_cohort:
               type: number
               sql: " date_diff(current_date(), ${order_date}, quarter) "
-          
-          
-
+    
       - name: revenue
         meta:
           metrics:
